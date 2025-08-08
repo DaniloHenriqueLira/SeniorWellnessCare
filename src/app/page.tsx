@@ -1,22 +1,14 @@
 // app/page.tsx
-'use client'
-import { useState } from 'react'
-import Hero from '@/components/Hero'
-import Services from '@/components/Services'
-import BookingSystem from '@/components/BookingSystem'
-import About from '@/components/About'
-import Contact from '@/components/Contact'
+import Hero from '@/components/sections/Hero';
+import About from '@/components/sections/About';
+import Contact from '@/components/sections/Contact';
 
-export default function Home() {
-  const [showBooking, setShowBooking] = useState(false)
-
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white">
-      <Hero onBookClick={() => setShowBooking(true)} />
-      <Services />
-      {showBooking && <BookingSystem />}
+    <>
+      <Hero />
       <About />
       <Contact />
-    </main>
-  )
+    </>
+  );
 }

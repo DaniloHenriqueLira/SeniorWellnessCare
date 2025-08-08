@@ -9,10 +9,7 @@ export default function Header() {
     <header className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center mr-3">
-            <span className="text-white font-bold">B</span>
-          </div>
-          <h1 className="text-xl font-bold text-gray-900">Senior Wellness Care</h1>
+          <img src="/LogoAndrea.svg" alt="Andrea Logo" className="h-12 w-auto" />
         </div>
 
         <nav className="hidden md:flex space-x-8">
