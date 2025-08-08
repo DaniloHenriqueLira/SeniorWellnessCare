@@ -25,17 +25,19 @@ export default function Header() {
     <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${
       scrolled 
         ? 'bg-black/95 backdrop-blur-lg shadow-xl' 
-        : 'bg-black/90 backdrop-blur-sm'
+        : 'bg-transparent'
     }`}>
+      {/* Ajustado a altura do header para acomodar o logo maior */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-20">
+        <div className="flex justify-between items-center h-20 sm:h-24 lg:h-28">
           
           {/* Logo com animação */}
           <div className="flex items-center">
             <img 
               src="/Andrea.svg" 
               alt="Andrea Beauty" 
-              className="h-14 sm:h-16 lg:h-20 w-auto transition-all duration-300 hover:scale-105"
+              // Aumentado o tamanho do logo e ajustado a altura em diferentes breakpoints
+              className="h-16 sm:h-20 lg:h-24 w-auto transition-all duration-300 hover:scale-105"
             />
           </div>
 

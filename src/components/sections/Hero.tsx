@@ -5,6 +5,20 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-black overflow-hidden">
+
+      {/* Imagem de Fundo com Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/Fundo3.png"
+          alt="Imagem de fundo decorativa com texturas suaves"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Este overlay escurece a imagem para o texto branco ficar mais legível */}
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
+
       {/* Elementos decorativos de fundo - mais sutis */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-10 w-72 h-72 bg-[#EE4E7F]/5 rounded-full blur-3xl animate-pulse" />
@@ -107,62 +121,19 @@ export default function Hero() {
             {/* Imagem Hero */}
             <div className="relative lg:pl-8">
               <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
-                  <Image
-                    src="/Imagem_Hero.png"
-                    alt="Andrea - Profissional de Beleza"
-                    width={600}
-                    height={700}
-                    className="w-full h-auto object-cover"
-                    priority
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  
-                  {/* Overlay gradient suave */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-                </div>
-
-                {/* Elementos decorativos removidos - deixando clean */}
+                <Image
+                  src="/Imagem_Hero.png"
+                  alt="Andrea - Profissional de Beleza"
+                  width={600}
+                  height={700}
+                  className="w-full h-auto object-cover mask-hero-image"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Wave rosa moderno e elegante */}
-      <div className="absolute bottom-0 left-0 right-0 h-32">
-        <svg className="w-full h-full" viewBox="0 0 1440 200" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="pinkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#EE4E7F" />
-              <stop offset="50%" stopColor="#FF6B9D" />
-              <stop offset="100%" stopColor="#EE4E7F" />
-            </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-          <path 
-            d="M0,100 C320,180 420,20 720,80 C1020,140 1120,60 1440,100 L1440,200 L0,200 Z" 
-            fill="url(#pinkGradient)" 
-            fillOpacity="0.15"
-            filter="url(#glow)"
-          />
-          <path 
-            d="M0,120 C360,200 480,40 720,100 C960,160 1080,80 1440,120 L1440,200 L0,200 Z" 
-            fill="url(#pinkGradient)" 
-            fillOpacity="0.25"
-          />
-          <path 
-            d="M0,140 C400,180 520,100 720,140 C920,180 1040,120 1440,140 L1440,200 L0,200 Z" 
-            fill="url(#pinkGradient)" 
-            fillOpacity="0.35"
-          />
-        </svg>
       </div>
     </section>
   );
